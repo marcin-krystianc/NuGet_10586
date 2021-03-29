@@ -1,0 +1,46 @@
+name: CI0
+
+on:
+  push:
+  pull_request:
+
+env:
+  CONSUL_VERSION: 1.6.1
+
+jobs:
+
+  # Build and test on all major platforms.
+  # Repack to avoid Newtonsoft.Json dependency in .NET Framework (This is to
+  # prevent issues with mismatched JSON.NET versions in user projects).
+  # Create a NuGet package on Windows only, as we build for .NET Framework 4.6.1
+  # and for .NET Standard 2.0.
+  build:
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.id != github.event.pull_request.base.repo.id
+    strategy:
+      matrix:
+        tmp: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      fail-fast: false
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.404
+                  
+      # Workaround for https://github.com/actions/setup-dotnet/issues/155
+      # - name: nuget list source
+      #  run: dotnet nuget list source
+        
+      # Workaround for https://github.com/actions/setup-dotnet/issues/155
+      # - name: Clear http-cache
+      #  run: dotnet nuget locals http-cache --clear
+        
+      # Workaround for https://github.com/actions/setup-dotnet/issues/155
+      # - name: locals all -l
+      #  run: dotnet nuget locals all -l
+
+      - name: Restore
+        run: dotnet restore -p:TreatWarningsAsErrors=true --disable-parallel 
