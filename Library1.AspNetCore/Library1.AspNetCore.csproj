@@ -4,7 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>1.0.0</VersionPrefix>
     <PackageId>Consul.AspNetCore</PackageId>
-    <AssemblyName>Consul.AspNetCore</AssemblyName>
     <PackageTags>Consul;service discovery;distributed locking;health checking</PackageTags>
     <PackageReleaseNotes>https://github.com/G-Research/consuldotnet/blob/master/CHANGELOG.md</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/G-Research/consuldotnet</PackageProjectUrl>
@@ -26,16 +25,17 @@
     <AssemblyOriginatorKeyFile>../assets/consuldotnet.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RootNamespace>Consul.AspNetCore</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Consul\Consul.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.10" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.10" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Library1\Library1.csproj" />
   </ItemGroup>
 
 </Project>

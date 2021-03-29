@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul", "Consul\Consul.csproj", "{B763F0CA-2BED-49FE-A2FB-2659FDE6222B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library1", "Library1\Library1.csproj", "{B763F0CA-2BED-49FE-A2FB-2659FDE6222B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.Test", "Consul.Test\Consul.Test.csproj", "{59CA6048-E8D0-46BF-997B-FEB7083C42C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library1.Test", "Library1.Test\Library1.Test.csproj", "{59CA6048-E8D0-46BF-997B-FEB7083C42C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C179F190-BAED-417B-A2E8-AF36BE6A5F1F}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,9 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consul.AspNetCore", "Consul.AspNetCore\Consul.AspNetCore.csproj", "{E7C9D5BF-7B28-43CE-93F2-B89FACF921C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library1.AspNetCore", "Library1.AspNetCore\Library1.AspNetCore.csproj", "{E7C9D5BF-7B28-43CE-93F2-B89FACF921C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consul.AspNetCore.Test", "Consul.AspNetCore.Test\Consul.AspNetCore.Test.csproj", "{2C3A84C0-877F-4542-8B41-A03ED43C2211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library1.AspNetCore.Test", "Library1.AspNetCore.Test\Library1.AspNetCore.Test.csproj", "{2C3A84C0-877F-4542-8B41-A03ED43C2211}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

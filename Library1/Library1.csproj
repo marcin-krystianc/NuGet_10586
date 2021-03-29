@@ -4,7 +4,6 @@
     <VersionPrefix>1.6.1.1</VersionPrefix>
     <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net461</TargetFrameworks>
     <TargetFrameworks Condition="'$(OS)' == 'Unix'">netstandard2.0</TargetFrameworks>
-    <AssemblyName>Consul</AssemblyName>
     <PackageId>Consul</PackageId>
     <PackageTags>Consul;service discovery;distributed locking;health checking</PackageTags>
     <PackageReleaseNotes>https://github.com/G-Research/consuldotnet/blob/master/CHANGELOG.md</PackageReleaseNotes>
@@ -27,6 +26,7 @@
     <AssemblyOriginatorKeyFile>../assets/consuldotnet.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RootNamespace>Consul</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
@@ -57,9 +57,7 @@
     </PropertyGroup>
     <MakeDir Directories="$(OutputPath)\ILMerge" />
     <Exec Command="$(IlmergeCommand)" ContinueOnError="false" />
-    <Move SourceFiles="%(BuildArtifacts.RelativeDir)ILMerge\%(filename)%(extension)"
-          DestinationFiles="%(BuildArtifacts.RelativeDir)%(filename)%(extension)"
-          OverwriteReadOnlyFiles="true"/>
+    <Move SourceFiles="%(BuildArtifacts.RelativeDir)ILMerge\%(filename)%(extension)" DestinationFiles="%(BuildArtifacts.RelativeDir)%(filename)%(extension)" OverwriteReadOnlyFiles="true" />
     <Delete Files="@(ArtifactsToMerge)" />
     <RemoveDir Directories="$(OutputPath)ILMerge" />
   </Target>
