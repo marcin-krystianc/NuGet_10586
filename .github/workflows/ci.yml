@@ -1,4 +1,4 @@
-name: CI0
+name: CI
 
 on:
   push:
@@ -22,18 +22,36 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.404
-                  
-      # Workaround for https://github.com/NuGet/Home/issues/10586
-      - name: nuget list source
-        run: dotnet nuget list source
+           
+      - name: Restore
+        run: dir C:\Users\runneradmin\AppData\Local\Temp\NuGetScratch
         
+      # Workaround for https://github.com/NuGet/Home/issues/10586
+      # - name: nuget list source
+      #  run: dotnet nuget list source
+
+      #################################################################
+      # Registered Sources:
+      # 1.  nuget.org [Enabled]
+      # https://api.nuget.org/v3/index.json
+      # 2.  Microsoft Visual Studio Offline Packages [Enabled]
+      # C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+      #################################################################
+      
       # Workaround for https://github.com/NuGet/Home/issues/10586
       # - name: Clear http-cache
       #  run: dotnet nuget locals http-cache --clear
         
       # Workaround for https://github.com/NuGet/Home/issues/10586
-      - name: locals all -l
-        run: dotnet nuget locals all -l
+      # - name: locals all -l
+      #  run: dotnet nuget locals all -l
+        
+      #################################################################
+      # http-cache: C:\Users\runneradmin\AppData\Local\NuGet\v3-cache
+      # global-packages: C:\Users\runneradmin\.nuget\packages\
+      # temp: C:\Users\runneradmin\AppData\Local\Temp\NuGetScratch
+      # plugins-cache: C:\Users\runneradmin\AppData\Local\NuGet\plugins-cache
+      #################################################################
 
       - name: Restore
         # `-v:diag` reduces chances of getting restore errors ?!
