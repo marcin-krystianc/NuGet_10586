@@ -36,6 +36,6 @@ jobs:
       #  run: dotnet nuget locals all -l
 
       - name: Restore
-        # -v:diag reduces chances to see restore errors
+        # `-v:diag` reduces chances of getting restore errors ?!
         # run: dotnet restore -p:TreatWarningsAsErrors=true --disable-parallel -v:diag
         run: dotnet restore -p:TreatWarningsAsErrors=true --disable-parallel 
