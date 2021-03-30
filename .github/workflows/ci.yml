@@ -23,8 +23,14 @@ jobs:
         with:
           dotnet-version: 3.1.404
            
-      - name: Restore
-        run: dir C:\Users\runneradmin\AppData\Local\Temp\NuGetScratch
+      - name: Dir temp
+        run: dir C:\Users\runneradmin\AppData\Local\Temp
+              
+      - name: Dir AppData
+        run: dir C:\Users\runneradmin\AppData\Local\
+        
+      - name: Dir runneradmin
+        run: dir C:\Users\runneradmin
         
       # Workaround for https://github.com/NuGet/Home/issues/10586
       # - name: nuget list source
