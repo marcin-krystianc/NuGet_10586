@@ -24,16 +24,16 @@ jobs:
           dotnet-version: 3.1.404
                   
       # Workaround for https://github.com/NuGet/Home/issues/10586
-      # - name: nuget list source
-      #  run: dotnet nuget list source
+      - name: nuget list source
+        run: dotnet nuget list source
         
       # Workaround for https://github.com/NuGet/Home/issues/10586
       # - name: Clear http-cache
       #  run: dotnet nuget locals http-cache --clear
         
       # Workaround for https://github.com/NuGet/Home/issues/10586
-      # - name: locals all -l
-      #  run: dotnet nuget locals all -l
+      - name: locals all -l
+        run: dotnet nuget locals all -l
 
       - name: Restore
         # `-v:diag` reduces chances of getting restore errors ?!
