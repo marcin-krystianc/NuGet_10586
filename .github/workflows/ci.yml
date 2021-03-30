@@ -23,7 +23,7 @@ jobs:
         with:
           dotnet-version: 3.1.404
            
-      - name: Dir temp
+      - name: Dir Temp
         run: dir C:\Users\runneradmin\AppData\Local\Temp
               
       - name: Dir AppData
